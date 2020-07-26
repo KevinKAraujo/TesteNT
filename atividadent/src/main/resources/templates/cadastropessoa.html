@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http//www.w3.org/1999/xhml" xmlns:th="http//www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+<style>
+
+body{
+    background: black;
+	}
+
+	section#agenda{
+	    background: white;
+	    border-radius: 10px;
+	    padding: 15px;
+	    width: 500px;
+	    height: 500px;
+	    margin:auto;
+	    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.37);
+	    font: normal 18px Arial;
+	    text-align: center;
+	}
+
+	div#interface{
+	    text-align: center;
+	}
+	
+</style>
+
+<body>
+
+<section id="agenda">
+
+<h1>Agende seu horário</h1>
+
+<form action="Agendar"> <!--Aqui criamos o form com nome da ação para ter a conexão com o nosso controller. a onde vai postar a informaçao -->
+	
+	
+    <div id="interface">
+
+    	<p><label>Nome</label>
+    	<input type="text" name="nome"></p>
+    	
+		<p><label>Data</label>
+    	<input type="date" name="data" min="2020-07-25" max="2020-12-31"> </p>
+    	 	
+ 		<label>Hora:</label>
+		<input type="number" name="hora" min="08" max="19" >
+		
+		<label>Min:</label>
+		<input type="number" name="min" min="0" max="59">
+		
+			
+   	 	<p><button type="submit" value ="agendar"> agendar </button> </p> <!-- Temos que usar o submit para subir no Banco -->
+    	
+    	
+    </div>
+
+</form>
+
+<table border = 1>
+	<tr>
+		<td>Nome</td>
+		<td>Data</td>
+		<td>Hora</td>
+		<td>Min</td>
+	</tr>
+
+	<tr th:each = "pessoa: ${pessoas}">
+		<td th:text ="${pessoa.nome}"></td>
+		<td th:text ="${pessoa.data}"></td>
+		<td th:text ="${pessoa.hora}"></td>
+		<td th:text ="${pessoa.min}"></td>
+	</tr>
+</table>
+
+
+ 
+</section>
+</body>
+</html>
