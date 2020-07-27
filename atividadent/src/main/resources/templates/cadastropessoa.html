@@ -24,10 +24,6 @@ body{
 	    font: normal 18px Arial;
 	    text-align: center;
 	}
-
-	div#interface{
-	    text-align: center;
-	}
 	
 	footer{
     color: white;
@@ -35,8 +31,10 @@ body{
     font-style: normal; 
 	}
 	
-	
-	
+	table{
+	margin:auto;
+	}
+			
 </style>
 
 <body>
@@ -45,30 +43,32 @@ body{
 
 <h1>Agende seu horário</h1>
 
-<form action="Agendar" > <!--Aqui criamos o form com nome da ação para ter a conexão com o nosso controller. a onde vai postar a informaçao -->
+<form action="Agendar"  > <!--Aqui criamos o form com nome da ação para ter a conexão com o nosso controller. a onde vai postar a informaçao -->
 	
 	
     <div id="interface">
 
     	<p><label>Nome</label>
-    	<input type="text" name="nome" required></p>
+    	<input type="text" name="nome" placeholder=" Digite seu nome" required ></p>
     	
 		<p><label>Data</label>
     	<input type="date" name="data" min="2020-07-25" max="2020-12-31" required> </p>
     	 	
  		<label>Hora:</label>
-		<input type="number" name="hora" min="08" max="19" required >
+		<input type="number" name="hora" min="08" max="19" placeholder="8 as 19h " width="10px" required> 
 		
 		<label>Min:</label>
-		<input type="number" name="min" min="0" max="59" required>
+		<input type="number" name="min" min="0" max="59" placeholder="30min" required>
 		
 			
-   	 	<p><button id="botao" type="submit" value ="agendar"> agendar </button> </p> <!-- Temos que usar o submit para subir no Banco -->
+   	 	<p id="botao"><button id="botao" type="submit" value ="agendar"> agendar </button> </p> <!-- Temos que usar o submit para subir no Banco -->
     	
     	
     </div>
-
+	
 </form>
+
+
 
 <table border = 1>
 	<tr>
