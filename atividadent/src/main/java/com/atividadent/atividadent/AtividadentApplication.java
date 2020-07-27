@@ -12,10 +12,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages= {"atividadent.repository"})
 @EnableTransactionManagement
 
+
 public class AtividadentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AtividadentApplication.class, args);
+		
+		
 	}
-
+	
 }

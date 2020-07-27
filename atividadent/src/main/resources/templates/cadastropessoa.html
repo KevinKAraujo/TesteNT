@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
+    
 <style>
 
 body{
@@ -28,6 +29,14 @@ body{
 	    text-align: center;
 	}
 	
+	footer{
+    color: white;
+    text-align:center;
+    font-style: normal; 
+	}
+	
+	
+	
 </style>
 
 <body>
@@ -36,25 +45,25 @@ body{
 
 <h1>Agende seu horário</h1>
 
-<form action="Agendar"> <!--Aqui criamos o form com nome da ação para ter a conexão com o nosso controller. a onde vai postar a informaçao -->
+<form action="Agendar" > <!--Aqui criamos o form com nome da ação para ter a conexão com o nosso controller. a onde vai postar a informaçao -->
 	
 	
     <div id="interface">
 
     	<p><label>Nome</label>
-    	<input type="text" name="nome"></p>
+    	<input type="text" name="nome" required></p>
     	
 		<p><label>Data</label>
-    	<input type="date" name="data" min="2020-07-25" max="2020-12-31"> </p>
+    	<input type="date" name="data" min="2020-07-25" max="2020-12-31" required> </p>
     	 	
  		<label>Hora:</label>
-		<input type="number" name="hora" min="08" max="19" >
+		<input type="number" name="hora" min="08" max="19" required >
 		
 		<label>Min:</label>
-		<input type="number" name="min" min="0" max="59">
+		<input type="number" name="min" min="0" max="59" required>
 		
 			
-   	 	<p><button type="submit" value ="agendar"> agendar </button> </p> <!-- Temos que usar o submit para subir no Banco -->
+   	 	<p><button id="botao" type="submit" value ="agendar"> agendar </button> </p> <!-- Temos que usar o submit para subir no Banco -->
     	
     	
     </div>
@@ -77,8 +86,11 @@ body{
 	</tr>
 </table>
 
-
- 
 </section>
+
+<footer>
+    <p> &copy; Atividade NT - Direitos Autorais Kevin Keller </p>
+</footer>
+
 </body>
 </html>
